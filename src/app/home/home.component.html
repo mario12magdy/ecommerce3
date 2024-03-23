@@ -1,0 +1,64 @@
+<!-- <app-loading *ngIf="loading" class="vh-100 z-3  w-100"></app-loading> -->
+<section *ngIf="loading" class="d-flex align-items-center justify-content-center customize h-100 w-100 position-absolute z-3  top-0 bottom-0 start-0 end-0 " scroll="no">
+  <img class="w-75 fa-bounce" src="../assets/images/freshcart-logo.svg" alt="">
+</section>
+<section *ngIf="!loading">
+    <div class="row g-0">
+        <div class="col-md-9">
+            <owl-carousel-o [options]="customOptions2">
+              <ng-template carouselSlide>
+                <img class="w-100" height="400" src="./assets/images/main-slider-1.jpeg" alt="">
+            </ng-template>  
+              <ng-template carouselSlide>     
+                       <img class="w-100" height="400" src="./assets/images/main-slider-2.jpeg" alt="">
+              </ng-template>  
+              <ng-template carouselSlide>
+                <img class="w-100" height="400" src="./assets/images/main-slider-3.jpeg" alt="">
+              </ng-template>  
+            </owl-carousel-o>
+        </div>
+        <div class="col-md-3">
+            <img class="w-100" height="200" src="./assets/images/slide-1.jpeg" alt="">
+            <img class="w-100" height="200" src="./assets/images/slide-2.jpeg" alt="">
+        </div>
+    </div>
+</section>
+
+<section *ngIf="!loading">
+    <h3>Shop popular categories</h3>
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let category of categories">
+        <ng-template carouselSlide [id]="category.id">
+          <img height="200px" [src]="category.image" [alt]="category.name" >
+          <h6>{{category.name}}</h6>
+        </ng-template>
+      </ng-container>
+  
+    </owl-carousel-o>
+</section>
+<!-- <div *ngFor="let category of categories">
+    <img [src]="category.image" alt="">
+</div> -->
+<section *ngIf="!loading" class="my-4">
+  <input #searchInput class="form-control w-75 mx-auto my-md-4 " type="search" name="" placeholder="Search">
+    <div class="row g-4">
+      
+
+        <div *ngFor="let product of products | search:searchInput.value" class="col-md-2 overflow-hidden">
+        <!-- .slice(0,18) -->
+            <div [routerLink]="['/details', product.id]">        
+            <img [src]="product.imageCover" alt="" class="w-100">
+            <h3 class="h6">{{product.category.name}}</h3>
+            <h4 class="h6"> {{product.title.split(' ').slice(0,2).join(' ')}}</h4>
+            <div class="d-flex justify-content-between ">
+                <p> {{product.price}} <span>EGP</span></p>
+                <div>
+                    <i class="fas fa-star ratecolor"></i>
+                    <span >{{product.ratingsAverage}}</span>
+                </div>
+            </div>
+            </div>
+            <button (click)="addToCart(product.id)" class="button-light p-2 w-100 border-0">Add to Cart +</button>
+        </div>
+    </div>
+</section>

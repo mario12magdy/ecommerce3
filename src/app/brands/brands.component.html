@@ -1,0 +1,8 @@
+<section class="d-flex justify-content-center align-items-center pb-5">
+    <div class="row  container">
+        <div *ngFor="let brand of brands.slice(0,20)" class="col-md-3">
+            <img [src]="brand.image" alt="">
+            <h6>{{brand.name}}</h6>
+        </div>
+    </div>
+</section>

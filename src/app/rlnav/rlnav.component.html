@@ -1,0 +1,63 @@
+<nav 
+    id="nav" [class]="isDarkMode? 'bg-dark':'bg-light'" class="navbar navbar-expand-sm navbar-light "
+>
+    <div class="container">
+        <a class="navbar-brand" routerLink="register">
+            <img class="fa-bounce" [src]="isDarkMode? './assets/images/light-logo.svg':'./assets/images/freshcart-logo.svg'" alt="">
+        </a>
+        <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse align-items-center justify-content-end navbar-collapse" id="collapsibleNavId">
+          
+            <ul class="navbar-nav justify-content-end align-items-center mt-2 mt-lg-0 ">
+                <li class="nav-item"><a class="nav-link" href="">
+                    <i [class]="isDarkMode? 'text-light':'text-black'" class="fa-brands fa-instagram"></i>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="">
+                    <i [class]="isDarkMode? 'text-light':'text-black'" class="fa-brands fa-facebook "></i>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="">
+                    <i [class]="isDarkMode? 'text-light':'text-black'" class="fa-brands fa-tiktok "></i>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="">
+                    <i [class]="isDarkMode? 'text-light':'text-black'" class="fa-brands fa-twitter "></i>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="">
+                    <i [class]="isDarkMode? 'text-light':'text-black'" class="fa-brands fa-linkedin "></i>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="">
+                    <i [class]="isDarkMode? 'text-light':'text-black'" class="fa-brands fa-youtube "></i>
+                </a></li>
+                
+                <li class="nav-item">
+                    <a [class]="isDarkMode? 'text-light':'text-black'" class="nav-link"  routerLink="login">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [class]="isDarkMode? 'text-light':'text-black'" class="nav-link" routerLink="register">Register</a>
+                </li>
+                <li class="nav-item w-25 cursor-pointer">
+                    <a class="w-100 nav-link" (click)="toggleTheme()">
+                        <!-- <img class="w-50"   [src]="isDarkMode? '../../assets/images/dark-mode-toggle-icon.svg':'../../assets/images/light-mode-toggle-icon.svg'" alt=""> -->
+                        <i [class]="isDarkMode? 'fa-solid fa-moon text-warning':'fa-solid fa-sun text-dark'"></i>
+                      </a>
+                </li>
+                
+
+               
+            </ul>
+            
+        </div>
+    </div>
+</nav>

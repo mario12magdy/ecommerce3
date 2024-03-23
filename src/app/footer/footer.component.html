@@ -1,0 +1,50 @@
+
+<div [class]="isDarkMode? 'bg-dark':'bg-light'" class="py-5">
+    <div class="container">
+        <h3>Get FreshCart app</h3>
+        <p class="opacity-75">We eill send you a link, open it on your phone to download the app</p>
+        <div class="container">
+            <form action="" class="row g-3 mb-md-4 ">
+
+                <div class="col-md-10">
+                    <input class="form-control " type="email" name="" id="" placeholder="Email ..">
+                </div>
+                <div class="col-2">
+                    <a id="btn" [class]="isDarkMode? 'bg-dark':'bg-light'" class="btn ">Share App Link</a>
+                </div>
+
+            </form>
+            
+          
+        </div>
+        <div class="border border-bottom border-top border-start-0 border-end-0 d-flex row justify-content-between  align-items-center">
+            <div class="row col-md-5 ">
+              <div class="col-md-6">
+                  <h3>Payment Partners</h3>
+              </div>
+              <div class="col-md-6    d-flex ">
+                  <ul class="list-unstyled row">
+                      <li class="col-md-3" *ngFor="let img of imgs">
+                          <img class="w-100" src="{{img}}" alt="">
+                      </li>
+                  </ul>
+              </div>
+            </div>
+
+
+              <div class="col-md-7">
+                  <div class="col-md-12 d-flex justify-content-end ">
+                      <ul class="list-unstyled row justify-content-end ">
+                        <li class="col-md-6 align-self-center">
+                            <h6>Get deliverles with FreshCart</h6>
+                        </li>
+                          <li class="col-md-3 py-3" *ngFor="let img of imgs2">
+                              <img class="w-75" src="{{img}}" alt="">
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+    </div>
+</div>
+

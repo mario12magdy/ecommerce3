@@ -1,0 +1,43 @@
+<section class="my-2 d-flex flex-column" >
+    <div>
+        <h3>Your Cart</h3>
+        <h6>Total Price : {{cartDetails.totalCartPrice | currency: "EGP"}} </h6>        
+        <!-- + (cartDetails.totalCartPrice*(14/100))  -->
+    </div>
+   <div *ngFor="let product of cartProducts">
+    <div class="row justify-content-between ">
+        <div class="col-md-9 row">
+            <div class="col-md-3">
+                <img class="w-75" [src]=product.product.imageCover alt="">
+            </div>
+            <div class="col-md-9 d-flex justify-content-start  flex-column align-items-start">
+                <h4>{{product.product.title}}</h4>
+                <h6>price:{{product.price}}</h6>
+                <div>
+                <button (click)="removeItem(product.product._id)" class="btn d-flex p-0 ">
+                    <i class="fa-solid fa-trash-can fs-4 me-3"></i>
+                    <span class="">Remove</span>
+                </button>    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex justify-content-end">   
+            <div class="w-50  d-flex justify-content-between ">
+                <button (click)="countChange(product.product._id, product.count + 1)" class="btn border border-success h-25 fs-4 "><i class="fa-solid fa-plus"></i></button> 
+            <span class="fs-4 fw-bolder">{{product.count}}</span>
+            <button (click)="countChange(product.product._id, product.count - 1)"  class="btn border border-success h-25 fs-4 d-flex align-items-center"><i class="fa-solid fa-minus"></i></button>     
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <button  class="button-lightCart p-2 w-25 fs-3 align-self-end border-0">
+   <a class="text-decoration-none text-light" [routerLink]="['/shipping',cartId]">
+    Online Payment 
+    <img src="../../assets/images/master.svg" alt=""> 
+   </a>
+</button>
+
+
+</section>
